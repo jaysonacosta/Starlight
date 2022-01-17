@@ -47,3 +47,6 @@ Thumbs.db
 
 # ESLint
 /.eslintrc.json
+
+# Environments
+/src/environments
