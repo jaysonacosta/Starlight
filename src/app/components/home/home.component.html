@@ -15,10 +15,14 @@
     </ng-container>
   </ng-container>
   <ng-template #loading>
-    <app-flower-spinner
-      [animationDuration]="2500"
-      [size]="70"
-      [color]="'#ff1d5e'"
-    ></app-flower-spinner>
+    <div class="row justify-content-center">
+      <div class="col-auto">
+        <app-flower-spinner
+          [animationDuration]="1500"
+          [size]="70"
+          [color]="'#ff1d5e'"
+        ></app-flower-spinner>
+      </div>
+    </div>
   </ng-template>
 </div>
