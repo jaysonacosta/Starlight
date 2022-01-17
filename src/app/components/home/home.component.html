@@ -1,0 +1,24 @@
+<div class="container">
+  <ng-container *ngIf="apod; else loading">
+    <!-- Astronomy Picture of the Day -->
+    <div class="row">
+      <div class="col">
+        <h1 class="fw-bold">Astronomy Picture of the Day</h1>
+      </div>
+    </div>
+    <ng-container *ngFor="let post of apod">
+      <div class="row justify-content-center">
+        <div class="col-auto">
+          <app-post [data]="post"></app-post>
+        </div>
+      </div>
+    </ng-container>
+  </ng-container>
+  <ng-template #loading>
+    <app-flower-spinner
+      [animationDuration]="2500"
+      [size]="70"
+      [color]="'#ff1d5e'"
+    ></app-flower-spinner>
+  </ng-template>
+</div>

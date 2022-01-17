@@ -1,0 +1,43 @@
+<div class="card post shadow-sm">
+  <div class="card-body">
+    <div class="row">
+      <div class="col">
+        <h3>{{ data.title }}</h3>
+      </div>
+    </div>
+    <div class="row mb-2">
+      <div class="col">
+        <div class="card">
+          <img class="card-img" src="{{ data.hdurl }}" alt="{{ data.title }}" />
+        </div>
+      </div>
+    </div>
+    <div class="row mb-2">
+      <div class="col">
+        <button class="btn btn-primary btn-sm">Like</button>
+      </div>
+    </div>
+    <div class="row mb-2">
+      <div class="col">
+        <button
+          type="button"
+          class="btn btn-outline-primary btn-sm"
+          (click)="collapse.toggle()"
+          [attr.aria-expanded]="!isCollapsed"
+          aria-controls="collapseExample"
+        >
+          <span *ngIf="!isCollapsed">Collapse</span>
+          <span *ngIf="isCollapsed">Expand</span>
+        </button>
+        <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+          <span>{{ data.explanation }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <p class="text-secondary">{{ data.date }}</p>
+      </div>
+    </div>
+  </div>
+</div>
