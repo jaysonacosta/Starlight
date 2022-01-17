@@ -1,3 +1,24 @@
+@import "/src/styles.scss";
 .post {
   max-width: 500px;
+}
+.card {
+  background-color: $manatee;
+}
+.title {
+  font-weight: bold;
+}
+.sub-text {
+  color: $alice-blue;
+}
+.btn-like {
+  background-color: $cyan;
+}
+.btn-dislike {
+  background-color: $crimson;
+  color: $alice-blue;
+  &:hover {
+    background-color: $imperial-red;
+    color: $alice-blue;
+  }
 }

@@ -42,6 +42,7 @@ export class NasaApiService {
           date: entry.date,
           copyright: entry.copyright,
           hdurl: entry.hdurl,
+          liked: false,
         };
         entries.unshift(apod);
       }
@@ -56,4 +57,5 @@ export interface Post {
   date?: string;
   copyright?: string;
   hdurl?: string;
+  liked?: boolean;
 }

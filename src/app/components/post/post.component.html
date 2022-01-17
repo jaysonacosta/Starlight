@@ -1,8 +1,11 @@
-<div class="card post shadow-sm">
+<div
+  class="card post shadow-sm"
+  [style.background-image]="'url({{ data.hdurl }}) !important'"
+>
   <div class="card-body">
     <div class="row">
       <div class="col">
-        <h3>{{ data.title }}</h3>
+        <h3 class="title">{{ data.title }}</h3>
       </div>
     </div>
     <div class="row mb-2">
@@ -14,14 +17,15 @@
     </div>
     <div class="row mb-2">
       <div class="col">
-        <button class="btn btn-primary btn-sm">Like</button>
+        <button class="btn btn-primary btn-sm" (click)="likePost(data)" *ngIf="!data.liked">Like</button>
+        <button class="btn btn-danger btn-sm" (click)="likePost(data)" *ngIf="data.liked">Dislike</button>
       </div>
     </div>
     <div class="row mb-2">
       <div class="col">
         <button
           type="button"
-          class="btn btn-outline-primary btn-sm"
+          class="btn btn-outline-primary btn-sm mb-2"
           (click)="collapse.toggle()"
           [attr.aria-expanded]="!isCollapsed"
           aria-controls="collapseExample"
@@ -36,7 +40,7 @@
     </div>
     <div class="row">
       <div class="col">
-        <p class="text-secondary">{{ data.date }}</p>
+        <span class="sub-text">{{ data.date }}</span>
       </div>
     </div>
   </div>
